@@ -1,12 +1,9 @@
-import { createMochaInstanceAlreadyRunningError } from "mocha/lib/errors";
-
 class BinarySearch {
-  constructor(searchArray = [], customCompareFunc = (a, b) => a - b) {
-    if (searchArray.length === 0) {
+  constructor(searchArray = [], compareFunc = (a, b) => a - b) {
+    if (searchArray.length === 0)
       throw new InitializationError("Empty array given when initalizing");
-    }
 
-    this.compareFunc = customCompareFunc;
+    this.compareFunc = compareFunc;
 
     if (this.arrayIsInOrder(searchArray)) {
       this.searchArray = searchArray;
@@ -46,23 +43,15 @@ class BinarySearch {
       targetItem
     );
 
-    if (compareValue === 0) {
-      return this.workingIndex + splitIndex;
-    }
+    if (compareValue === 0) return this.workingIndex + splitIndex;
     if (compareValue < 0) {
       this.workingArray = [...this.workingArray].slice(
         splitIndex,
         this.workingArray.length + 1
       );
       this.workingIndex = this.workingIndex + splitIndex;
-    } else {
-      this.workingArray = [...this.workingArray].slice(0, splitIndex);
-    }
-    console.log({
-      workingArray: this.workingArray,
-      targetItem,
-      workingIndex: this.workingIndex,
-    });
+    } else this.workingArray = [...this.workingArray].slice(0, splitIndex);
+
     return this.find(targetItem);
   }
 }
