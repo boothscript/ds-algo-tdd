@@ -19,12 +19,12 @@ class BinarySearch {
   searchArraySize() {
     return this.searchArray.length;
   }
+
   arrayIsInOrder(array) {
     const orderedArray = [...array].sort(this.compareFunc);
-    console.log(orderedArray);
-    console.log(array);
     return String(orderedArray) == String(array);
   }
+
   findCentralIndex(arrayLength) {
     return Math.ceil(arrayLength / 2) - 1;
   }
@@ -55,6 +55,7 @@ class BinarySearch {
     return this.find(targetItem);
   }
 }
+
 export class InitializationError extends Error {
   constructor(message) {
     super(message);
