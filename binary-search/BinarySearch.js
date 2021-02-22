@@ -5,15 +5,14 @@ class BinarySearch {
 
     this.compareFunc = compareFunc;
 
-    if (this.arrayIsInOrder(searchArray)) {
-      this.searchArray = searchArray;
-      this.workingArray = [...searchArray];
-      this.workingIndex = 0;
-    } else {
+    if (!this.arrayIsInOrder(searchArray))
       throw new InitializationError(
         "Search array does not appear to be in order"
       );
-    }
+
+    this.searchArray = searchArray;
+    this.workingArray = [...searchArray];
+    this.workingIndex = 0;
   }
 
   searchArraySize() {
