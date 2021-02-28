@@ -30,6 +30,14 @@ class LinkedList {
     });
     return `[${result}]`;
   }
+  get length() {
+    let count = -1;
+    const countLength = (node) => {
+      count++;
+    };
+    this.traverse(this, countLength);
+    return count;
+  }
 }
 
 export default LinkedList;
