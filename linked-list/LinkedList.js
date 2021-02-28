@@ -21,6 +21,12 @@ class LinkedList {
     lastNode.next = new Node(value);
   }
 
+  push(value) {
+    const newNode = new Node(value);
+    newNode.next = this.next;
+    this.next = newNode;
+  }
+
   print() {
     let result = "";
     const stringify = (node) => {

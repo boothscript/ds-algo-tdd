@@ -48,4 +48,12 @@ describe("List and node creation", () => {
     linkedList.append(3);
     assert.strictEqual(linkedList.length, 3);
   });
+  it("push x onto the start of list", () => {
+    const linkedList = new LinkedList();
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
+    linkedList.push(100);
+    assert.strictEqual(linkedList.print(), "[100, 1, 2, 3]");
+  });
 });
