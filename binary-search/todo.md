@@ -1,0 +1,2 @@
+- add tests for custom compare function
+- add randomized tests
