@@ -16,18 +16,20 @@ class LinkedList {
     return this.traverse(node.next, nodeCallback);
   }
 
-  push(value) {
+  append(value) {
     const lastNode = this.traverse(this);
     lastNode.next = new Node(value);
   }
 
   print() {
     let result = "";
-    this.traverse(this, (node) => {
+    const stringify = (node) => {
       if (!node.value) return;
       // if result is empty, no need to append value on to end
       result = result ? `${result}, ${node.value}` : node.value;
-    });
+    };
+
+    this.traverse(this, stringify);
     return `[${result}]`;
   }
   get length() {
@@ -35,6 +37,7 @@ class LinkedList {
     const countLength = (node) => {
       count++;
     };
+
     this.traverse(this, countLength);
     return count;
   }

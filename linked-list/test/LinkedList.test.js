@@ -7,21 +7,21 @@ describe("List and node creation", () => {
     const linkedList = new LinkedList();
     assert.strictEqual(linkedList.next, null);
   });
-  it("push value on to list and create a node", () => {
+  it("append value on to list and create a node", () => {
     const linkedList = new LinkedList();
-    linkedList.push(1);
+    linkedList.append(1);
     assert.strictEqual(linkedList.next.value, 1);
   });
-  it("push x and create node with x", () => {
+  it("append x and create node with x", () => {
     const linkedList = new LinkedList();
-    linkedList.push(100);
+    linkedList.append(100);
     assert.strictEqual(linkedList.next.value, 100);
   });
-  it("push 2nd value on to linked list", () => {
+  it("append 2nd value on to linked list", () => {
     const linkedList = new LinkedList();
-    linkedList.push(100);
+    linkedList.append(100);
     assert.strictEqual(linkedList.next.value, 100);
-    linkedList.push(300);
+    linkedList.append(300);
     assert.strictEqual(linkedList.next.value, 100);
     assert.strictEqual(linkedList.next.next.value, 300);
   });
@@ -29,11 +29,11 @@ describe("List and node creation", () => {
     const linkedList = new LinkedList();
     assert.strictEqual(linkedList.print(), "[]");
   });
-  it("push 3nd value on to linked list and print", () => {
+  it("append 3nd value on to linked list and print", () => {
     const linkedList = new LinkedList();
-    linkedList.push(100);
-    linkedList.push(300);
-    linkedList.push(500);
+    linkedList.append(100);
+    linkedList.append(300);
+    linkedList.append(500);
     assert.strictEqual(linkedList.print(), "[100, 300, 500]");
     2;
   });
@@ -43,9 +43,9 @@ describe("List and node creation", () => {
   });
   it("returns length of list", () => {
     const linkedList = new LinkedList();
-    linkedList.push(1);
-    linkedList.push(2);
-    linkedList.push(3);
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
     assert.strictEqual(linkedList.length, 3);
   });
 });
